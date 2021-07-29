@@ -80,8 +80,8 @@ function Home() {
           window.location.reload();
         }
         else{
-          window.location.reload();
           history.push("/login");
+          window.location.reload();
         }
       });
     };
@@ -98,8 +98,8 @@ function Home() {
           window.location.reload();
         }
         else{
-          window.location.reload();
           history.push("/login");
+          window.location.reload();
         }
       });
     };
@@ -116,8 +116,8 @@ function Home() {
           window.location.reload();
         }
         else{
-          window.location.reload();
           history.push("/login");
+          window.location.reload();
         }
       });
     };
