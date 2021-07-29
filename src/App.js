@@ -30,7 +30,7 @@ function App() {
         accessToken: localStorage.getItem("accessToken")
     }).then((response) => {
       localStorage.removeItem("accessToken");
-      if (response.data.error){
+      if (!response.data.error){
         window.location.reload();
       }
     });
