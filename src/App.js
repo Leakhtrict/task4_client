@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from 'react';
 import axios from "axios";
@@ -36,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <AuthContext.Provider value={{authState, setAuthState}}>
-        <Router forceRefresh={true}>
+        <Router>
           <div className="navBar">
             <Link to="/"> Main Page</Link>
             {!authState ? (
@@ -52,6 +53,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/register" exact component={Register} />
             <Route path="/login" exact component={Login} />
+            <Route path="*" exact component={PageNotFound} />
           </Switch>
         </Router>
       </AuthContext.Provider>
