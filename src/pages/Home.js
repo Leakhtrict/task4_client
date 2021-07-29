@@ -97,7 +97,7 @@ function Home() {
           window.location.reload();
         }
         else{
-          window.location.reload().then(() => history.push("/login"));
+          history.push("/login");
         }
       });
     };
