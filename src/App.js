@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <AuthContext.Provider value={{authState, setAuthState}}>
-        <Router>
+        <Router forceRefresh={true}>
           <div className="navBar">
             <Link to="/"> Main Page</Link>
             {!authState ? (
