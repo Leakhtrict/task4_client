@@ -80,6 +80,7 @@ function Home() {
           window.location.reload();
         }
         else{
+          window.location.reload();
           history.push("/login");
         }
       });
@@ -97,6 +98,7 @@ function Home() {
           window.location.reload();
         }
         else{
+          window.location.reload();
           history.push("/login");
         }
       });
@@ -114,6 +116,7 @@ function Home() {
           window.location.reload();
         }
         else{
+          window.location.reload();
           history.push("/login");
         }
       });
