@@ -11,7 +11,7 @@ function App() {
   const [authState, setAuthState] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/users/auth", {
+    axios.get("https://itransition-summer-task4.herokuapp.com/users/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   const logOut = () => {
-    axios.put("http://localhost:3001/users/logout", {
+    axios.put("https://itransition-summer-task4.herokuapp.com/users/logout", {
         accessToken: localStorage.getItem("accessToken")
     }).then(() => {
       localStorage.removeItem("accessToken");

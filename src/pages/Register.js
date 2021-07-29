@@ -21,7 +21,7 @@ function Register() {
     });
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/users/register", data).then((response) => {
+        axios.post("https://itransition-summer-task4.herokuapp.com/users/register", data).then((response) => {
             localStorage.setItem("accessToken", response.data);
             history.push("/login");
         });

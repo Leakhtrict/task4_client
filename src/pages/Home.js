@@ -69,14 +69,14 @@ function Home() {
     } = tableInstance;
 
     const deleteData = () => {
-      axios.get("http://localhost:3001/users/auth", {
+      axios.get("https://itransition-summer-task4.herokuapp.com/users/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
       }).then((response) => {
         if (!response.data.error) {
           const deleteIds = selectedFlatRows.map(row => row.original.id);
-          axios.put("http://localhost:3001/users/deleteUsers", deleteIds);
+          axios.put("https://itransition-summer-task4.herokuapp.com/users/deleteUsers", deleteIds);
           window.location.reload();
         }
         else{
@@ -86,14 +86,14 @@ function Home() {
     };
 
     const blockUser = () => {
-      axios.get("http://localhost:3001/users/auth", {
+      axios.get("https://itransition-summer-task4.herokuapp.com/users/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
       }).then((response) => {
         if (!response.data.error) {
           const blockIds = selectedFlatRows.map(row => row.original.id);
-          axios.put("http://localhost:3001/users/blockUsers", blockIds);
+          axios.put("https://itransition-summer-task4.herokuapp.com/users/blockUsers", blockIds);
           window.location.reload();
         }
         else{
@@ -103,14 +103,14 @@ function Home() {
     };
 
     const unblockUser = () => {
-      axios.get("http://localhost:3001/users/auth", {
+      axios.get("https://itransition-summer-task4.herokuapp.com/users/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
       }).then((response) => {
         if (!response.data.error) {
           const unblockIds = selectedFlatRows.map(row => row.original.id);
-          axios.put("http://localhost:3001/users/unblockUsers", unblockIds);
+          axios.put("https://itransition-summer-task4.herokuapp.com/users/unblockUsers", unblockIds);
           window.location.reload();
         }
         else{
