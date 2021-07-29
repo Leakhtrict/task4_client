@@ -26,7 +26,7 @@ function Home() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/users").then((response) => {
+    axios.get("https://itransition-summer-task4.herokuapp.com/users").then((response) => {
       setListOfUsers(response.data);
     });
   }, []);
