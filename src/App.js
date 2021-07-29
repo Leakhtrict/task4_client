@@ -28,9 +28,11 @@ function App() {
   const logOut = () => {
     axios.put("https://itransition-summer-task4.herokuapp.com/users/logout", {
         accessToken: localStorage.getItem("accessToken")
-    }).then(() => {
+    }).then((response) => {
       localStorage.removeItem("accessToken");
-      window.location.reload();
+      if (response.data.error){
+        window.location.reload();
+      }
     });
   };
 
