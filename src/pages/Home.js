@@ -81,7 +81,6 @@ function Home() {
         }
         else{
           history.push("/login");
-          window.location.reload();
         }
       });
     };
@@ -98,8 +97,7 @@ function Home() {
           window.location.reload();
         }
         else{
-          history.push("/login");
-          window.location.reload();
+          window.location.reload().then(() => history.push("/login"));
         }
       });
     };
@@ -117,7 +115,6 @@ function Home() {
         }
         else{
           history.push("/login");
-          window.location.reload();
         }
       });
     };
