@@ -4,6 +4,7 @@ import { useEffect, useState, forwardRef, useRef, useMemo } from "react";
 import { useTable, useRowSelect } from "react-table";
 import { COLUMNS } from "../helpers/columns";
 import { useHistory } from "react-router-dom";
+import { AuthContext } from "../helpers/AuthContext"
 
 const SelectCheckbox = forwardRef(
   ({ indeterminate, ...rest }, ref) => {
@@ -24,6 +25,7 @@ const SelectCheckbox = forwardRef(
 
 function Home() {
   const [listOfUsers, setListOfUsers] = useState([]);
+  const { authState } = useContext(AuthContext);
 
   useEffect(() => {
     axios.get("https://itransition-summer-task4.herokuapp.com/users").then((response) => {
@@ -173,7 +175,10 @@ function Home() {
 
     return (
         <div className="homePage">
+          {authState ? (
             <MainTable />
+            ) : (<div />)
+          }
         </div>
     );
 }
