@@ -76,8 +76,10 @@ function Home() {
       }).then((response) => {
         if (!response.data.error) {
           const deleteIds = selectedFlatRows.map(row => row.original.id);
-          axios.put("https://itransition-summer-task4.herokuapp.com/users/deleteUsers", deleteIds);
-          history.go(0);
+          axios.put("https://itransition-summer-task4.herokuapp.com/users/deleteUsers", deleteIds)
+          .then(() => {
+            history.go(0);
+          });
         }
         else{
           history.push("/login");
@@ -93,8 +95,10 @@ function Home() {
       }).then((response) => {
         if (!response.data.error) {
           const blockIds = selectedFlatRows.map(row => row.original.id);
-          axios.put("https://itransition-summer-task4.herokuapp.com/users/blockUsers", blockIds);
-          history.go(0);
+          axios.put("https://itransition-summer-task4.herokuapp.com/users/blockUsers", blockIds)
+          .then(() => {
+            history.go(0);
+          });
         }
         else{
           history.push("/login");
@@ -110,8 +114,10 @@ function Home() {
       }).then((response) => {
         if (!response.data.error) {
           const unblockIds = selectedFlatRows.map(row => row.original.id);
-          axios.put("https://itransition-summer-task4.herokuapp.com/users/unblockUsers", unblockIds);
-          history.go(0);
+          axios.put("https://itransition-summer-task4.herokuapp.com/users/unblockUsers", unblockIds)
+          .then(() => {
+            history.go(0);
+          });
         }
         else{
           history.push("/login");
@@ -161,19 +167,6 @@ function Home() {
             })}
           </tbody>
         </table>
-      <pre>
-        <code>
-          {JSON.stringify(
-            {
-              'selectedFlatRows[].original': selectedFlatRows.map(
-                d => d.original
-              ),
-            },
-            null,
-            2
-          )}
-        </code>
-      </pre>
       </>
     );
   };
