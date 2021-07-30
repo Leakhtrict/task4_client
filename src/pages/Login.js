@@ -25,7 +25,7 @@ function Login() {
             else{
                 localStorage.setItem("accessToken", response.data);
                 history.push("/");
-                window.location.reload();
+                history.go(0);
             }
         });
     };
