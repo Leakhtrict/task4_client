@@ -77,7 +77,7 @@ function Home() {
         if (!response.data.error) {
           const deleteIds = selectedFlatRows.map(row => row.original.id);
           axios.put("https://itransition-summer-task4.herokuapp.com/users/deleteUsers", deleteIds);
-          window.location.reload();
+          history.go(0);
         }
         else{
           history.push("/login");
@@ -94,7 +94,7 @@ function Home() {
         if (!response.data.error) {
           const blockIds = selectedFlatRows.map(row => row.original.id);
           axios.put("https://itransition-summer-task4.herokuapp.com/users/blockUsers", blockIds);
-          window.location.reload();
+          history.go(0);
         }
         else{
           history.push("/login");
@@ -111,7 +111,7 @@ function Home() {
         if (!response.data.error) {
           const unblockIds = selectedFlatRows.map(row => row.original.id);
           axios.put("https://itransition-summer-task4.herokuapp.com/users/unblockUsers", unblockIds);
-          window.location.reload();
+          history.go(0);
         }
         else{
           history.push("/login");
